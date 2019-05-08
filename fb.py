@@ -8,6 +8,6 @@ print(trivia['text'])
 print('-'*20)
 print(trivia['query'])
 img = dt.generate_image(trivia['text'],trivia['query'])
-img['final'].save('output.png')
+img['out'].save('output.png')
 graph.put_photo(image=open('output.png', 'rb'))
 
