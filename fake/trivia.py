@@ -47,7 +47,7 @@ def generate_image(trivia, query):
 def add_text(text,img):
     width,height = img.size
     lines = textwrap.wrap(text, width=42)
-    font = ImageFont.truetype('times-new-roman.ttf',25)
+    font = ImageFont.truetype('fake/times-new-roman.ttf',25)
     text_height = 42
     for line in lines:
         fw,fh = font.getsize(line)
