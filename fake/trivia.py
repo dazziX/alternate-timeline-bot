@@ -14,7 +14,7 @@ def get_trivia(month: int=None,day: int=None):
         now = date.today()
         month = now.month
         day = now.day
-        md_str = now.strftime('%B %d')
+        md_str = now.strftime(f'%B {day}')
     else:
         md_str = date(1900, month, day).strftime('%B %d')
 
