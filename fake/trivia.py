@@ -14,8 +14,10 @@ def get_trivia(month: int=None,day: int=None):
         now = date.today()
         month = now.month
         day = now.day
-    real_text = requests.get(f'http://numbersapi.com/{str(month)}/{str(day)}/date').text
-    md_str = ' '.join(real_text.split()[:2])
+        md_str = now.strftime('%B %d')
+    else:
+        md_str = date(1900, month, day).strftime('%B %d')
+
     with open('fake/trivias.txt', encoding='utf-8') as f:
         model = markovify.NewlineText(f.read())
     markov_text = model.make_sentence(tries=50)
