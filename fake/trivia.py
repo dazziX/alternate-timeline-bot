@@ -50,10 +50,10 @@ def add_text(text,img):
     width,height = img.size
     lines = textwrap.wrap(text, width=42)
     font = ImageFont.truetype('fake/times-new-roman.ttf',25)
-    text_height = 42
+    text_height = 62
     for line in lines:
         fw,fh = font.getsize(line)
-        text_height += fh + 4
+        text_height += 28 + 4
 
     text_box = Image.new('RGB',(500,height + text_height),(10,0,0))
     text_box.paste(img, (0,0))
@@ -62,8 +62,8 @@ def add_text(text,img):
     text_height = 0
     for line in lines:
         fw,fh = font.getsize(line)
-        draw.text(((width - fw) // 2, 520 + text_height), line, font=font, fill=(255,255,255))
-        text_height += fh + 4
+        draw.text(((width - fw) // 2, 530 + text_height), line, font=font, fill=(255,255,255))
+        text_height += 28 + 4
         
     return text_box
 
